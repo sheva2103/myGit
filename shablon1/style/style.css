@@ -261,14 +261,16 @@ li a:hover {
 .element_h2 {
   font-weight: 600;
   font-size: 38px;
-  /*padding: 155px 0 0 0;*/
+  letter-spacing: 1px;
 }
 
 .element_text {
+  padding: 30px 250px;
+}
+.element_h3 {
   font-weight: 400;
   font-size: 18px;
-  flex-wrap: wrap;
-  padding: 30px 250px;
+  line-height: 24px;
 }
 
 /*-----------------------------------*/
@@ -283,7 +285,19 @@ li a:hover {
   width: 20%;
 }
 .img_mn {
-  margin-top: 60px;
+  margin: 60px 0 -60px 0;
 }
 /*-----------------------------------------*/
 
+.ultimate {
+  display: flex;
+  width: 100%;
+  margin: 150px 0;
+}
+
+.element_h3_1 {
+  border-left: 4px solid #A92A1D;
+  padding: 0 10px;
+}
+
+/*-------------------------------------*/
