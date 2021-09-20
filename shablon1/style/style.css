@@ -341,8 +341,98 @@ li a:hover {
   float: right;
   margin-top: -140px;
   width: 30%;
+  margin-bottom: 100px;
 }
 .element_foto_right img {
   width: 100%;
   padding-top: 10px;
+}
+
+/*-------------------------------------*/
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.welcome_element1 {
+  flex: 0 0 30%;
+}
+
+.welcome_element2 {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+}
+
+.welcome_element3 {
+  flex: 0 0 30%;
+}
+
+.welcome img {
+  width: 100%;
+}
+
+.welcome_element2_foto {
+  margin-top: -150px;
+}
+
+.welcome_element3_text {
+  margin-top: 39px;
+  padding: 0 38px;
+}
+
+.welcome_element3_text {
+  text-align: center;
+}
+
+.welcome_element3_text h1 {
+  margin-bottom: 10px;
+}
+
+.colortext {
+  color: #A92A1D;
+}
+/*---------------------------------------*/
+
+.subscribe {
+  width: 100%;
+  position: relative;
+}
+
+.subscribe_back {
+  width: 100%;
+}
+.subscribe_back img {
+  width: 100%;
+}
+
+.subscribe_foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+}
+
+.subscribe_foto img {
+  width: 100%;
+}
+
+.subscribe_text {
+  position: absolute;
+  top: 50%;
+  color: #dbd9d9;
+  width: 100%;
+}
+
+.text_element {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.text_element_1 {
+  margin-bottom: 16px;
 }
