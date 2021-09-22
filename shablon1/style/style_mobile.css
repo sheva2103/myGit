@@ -1,0 +1,22 @@
+@media (max-width: 1050px) {
+    .menu_right ul li {
+        display: inline;
+        margin: 0 16px 0 0;
+      }
+      .menu2 {
+          margin: 0 0 0 20px;
+      }
+      .personal_text {
+          margin-top: -400px;
+      }
+      .element_text {
+          padding: 30px 100px;
+      }
+      .welcome_element3_text {
+          padding: 0 8px;
+      }
+      .icon_fallow {
+        display: flex;
+        flex-wrap: wrap;
+      }
+}

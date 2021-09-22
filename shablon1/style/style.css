@@ -479,11 +479,6 @@ li a:hover {
   width: 100%;
 }
 
-/*.information {
-  display: flex;
-  flex-direction: column;
-}*/
-
 .links, .Rgum, .fallow, .information {
   flex: 0 1 25%;
 }
