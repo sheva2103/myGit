@@ -436,3 +436,24 @@ li a:hover {
 .text_element_1 {
   margin-bottom: 16px;
 }
+/*---------------------------------*/
+
+.element_button_1 {
+  margin-bottom: 50px;
+}
+
+.element_button_1 a {
+  border: solid 1px white;
+  padding: 17px 152px 17px 152px;
+}
+
+.text_element_3 {
+  padding: 40px 0;
+}
+
+.element_button_2 a {
+  border: solid 1px white;
+  padding: 17px 170px 17px 170px;
+  background-color: white;
+  color: black;
+}
