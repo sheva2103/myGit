@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    margin: 10 10 0 10px;
+    background-color: rgb(247, 167, 167);
+    height: 100px;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+
+.footer {
+    height: 200px;
+    width: 100%;
+    background-color: rgb(144, 153, 241);
+}
+
+.spisok {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.spisok li {
+  padding: 20px;
+  border: solid 1px;
+  background-color: #fff;
+}
+
+@media (max-width: 496px) {
+  .spisok li {
+    margin-bottom: 10px;
+  }
+  .header {
+    height: 180px;
+  }
+  .main_elements {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    grid-template-rows: 1fr;
+    gap: 10px;
+    margin: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.main_elements {
+  display: grid;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  margin: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bigpic {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
