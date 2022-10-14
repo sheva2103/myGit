@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <input id="eee" type="text">
+<script src="users.js"></script>    
+<script>
+    console.log(users)
+    document.querySelector('#eee').addEventListener('input', () => {console.log(document.querySelector('#eee').value)})
+    let qqq = document.querySelector('.wrapper')
+
+    qqq.insertAdjacentHTML("afterBegin", '<div class="element_name">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, harum.</div>');
+
+    
+
+    
+    
+</script>
+
+<script>
+    async function www() {
+        const p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log('timeaut')
+                    resolve()
+                    },2000)
+                
+            })
+            await p.then(() => {
+                return new Promise((resolve, reject) => {
+                    {setTimeout(() => {
+                        console.log('time #2')
+                        resolve()}, 2000)
+                    
+                }
+                })
+            })//.then((l) => console.log('konec', l))
+            //let result = await p
+            console.log('acync await')
+            console.log(444444444444)
+    }
+    www()
+            
+</script>
+</html>

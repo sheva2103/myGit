@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test</h1>
+    <script>
+        let po = [5,6,1,2,9];
+        console.log(po.length)
+        po.pop();
+        console.log(po);
+        po.push(12);
+        let pi = po;
+        pi.push(34);
+        console.log(pi);
+        pi.splice(1, 4, "re", "j1");
+        console.log(pi)
+        let pu = pi.slice(2, 3)
+        console.log(pu)
+        let oi = po.concat(pu)
+        console.log(oi)
+        oi.indexOf("j1")
+        console.log(oi.indexOf("j1"));
+        let ty = 'qwe wir rty yui'
+        let qw = ty.split('')
+        console.log(qw)
+        for(let i of po) {
+            console.log(i)
+        }
+        if(po.length > 6) {
+            console.log(123)
+        }
+        else {
+            console.log(345)
+        }
+        if(oi[3] % 2 == 0 || oi[4] % 2 == 0) {
+            console.log("zzz")
+        }
+        else {
+            console.log("xxx")
+        }
+
+        let wery = [1, 2, 3, 4, 5, 6, 7]
+        for(let a of wery) {
+            console.log(a)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipaforum.net</title>
+    <link rel="stylesheet" href="class.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div id="mod_window" class="modal" data-open="close">
+            <div class="modal_body">
+                <div class="modal_content">
+                    <form name="loginForm" action="./tipaforum.net.html" method="post">
+                        <div class="modal_content_login">
+                            <span>${type}</span>
+                            <input type="text" name="loginInput" pattern="\w+" required  minlength="4" maxlength="20">
+                            <span id="textPassword">Пароль</span>
+                            <input type="password" name="passwordInput" pattern="\w+" minlength="6" maxlength="20" required>
+                        </div>
+                        <div href="" class="modal_close">X</div>                   
+                        <button type="submit" id="submit">OK</button>
+                    </form>
+                </div>                       
+            </div>
+        </div>
+
+
+
+
+        <div class="sidebar">
+            <div class="sidebar_login">
+                <div id="login" class="sliding-button" window_open="false">Войти</div>
+                <div id="registration" class="sliding-button" window_open="false">Регистрация</div>
+            </div>
+            <div class="sidebar_user">
+                <div class="sidebar_name"><span>Вы вошли как:<b><span class="openUser"></span></b></span></div>
+                <div class="sidebar_time"><span></span></div>
+                <div class="sidebar_darkWhiteMode">
+                    
+                    <div class="sidebar_darkWhiteMode_wrapper">
+                        <div class="sidebar_darkMode"></div>
+                    </div>
+                    <span>Темный режим</span>
+                </div>
+                <div class="sidebar_exit"><span id="admin"><a href="./admin.html">Админка</a></span><span id="exit"><a href="./tipaforum.net.html">Выйти</a></span></div>
+            </div>
+        </div>
+        <div class="management">
+            <div class="newMessage">
+                <button id="addMessage" class="sliding-button">Написать сообщение</button>
+            </div>
+            <div class="searchMessage">
+                <a href="./search.html"><button id="search_button" class="sliding-button">поиск</button></a>
+                <input type="text" class="search_input">
+            </div>
+        </div>
+        
+        
+    </div>
+    <script src="./users.js"></script>
+    <script src="./functions.js"></script>
+    <script src="./backend.js"></script>
+    <script src="./class.js"></script>
+    <script src="./classMain.js"></script>
+</body>
+</html>

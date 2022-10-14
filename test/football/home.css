@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;900&display=swap');
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+    padding: 1px;
+    background-image: url(logo.jpg);
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(38, 91, 236);
+    box-shadow: -1px 1px 2px 4px rgba(20, 36, 48, 0.34) inset;
+    box-shadow: inset 0px 12px 12px -8px rgba(163,163,163,0.93);
+    z-index: 5;
+}
+
+.start {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    font-size: 160%;
+    min-width: 7%;
+    padding: 0px 20px 0px 5px;
+    background-color: rgb(57, 235, 33);
+    border-radius: 0px 12px 16px 0px;
+    font-style:italic;
+    display: flex;
+    flex-direction: row;
+    margin: -2px 0px -4px 0px;
+    box-shadow: -1px 1px 2px 4px rgba(20, 36, 48, 0.34) inset;
+    transition: 0.3s;
+}
+.start_click {
+    box-shadow: -1px 1px 2px 7px rgba(20, 36, 48, 0.34) inset;
+}
+
+.icon {
+    width: 40px;
+    align-self: center;
+}
+.icon_xp {
+    width: 100%;
+    background-color: rgba(255, 113, 113, 0);
+    z-index: 1;
+    
+}
+
+.text {
+    color: rgb(255, 251, 251);
+    text-shadow: 3px 2px 1px rgba(152, 150, 150, 0.753);
+    align-self: center;
+    
+}
+
+.menu {
+    position: absolute;
+    /*bottom: 43px;*/
+    bottom: 4.3%;
+    width: 20%;
+    height: 45%;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 1;
+    transition: 0.5s;
+    border-radius:  0px 16px 0px 0px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+.menu_hide {
+    position: absolute;
+    height: 0px;
+}
+
+.tenis, .football {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tenis_logo {
+    width: 50px;
+}
+.foot_logo {
+    width: 50px;
+}
+

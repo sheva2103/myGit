@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./tableStyle.css">
+</head>
+<body>
+    
+    <button id="showUsers">Показать всех пользователей</button>
+    <button id="closeUsers">Спрятать всех пользователей</button>
+    <form>
+        Найти бичя <input type="text" name="searchUser">
+        <span>Бич найден: <span id="selectBich"></span></span><br>
+        <button id="searchBich">поиск</button>
+        <p>Что сделать с бичём:</p>
+        На**й свиням<input type="radio" name="curency" value="delet"><br>
+        Просто забанить<input type="radio" name="curency" value="banned"><br>
+        Обмазать сметаной и разбанить<input type="radio" name="curency" value="removeBanned"><br>
+        <button id="apply">Применить</button>
+    </form>
+    <button id="getMessage">Показать что накашлял бич</button>
+    <button id="removeMessage" style="display: none;">Спрятать накашляное</button>
+    <div id="showMessage" style="width: 400px; height: 300px; overflow: auto; display: none; border: solid 1px black">
+    </div>
+
+    <script src="./users.js"></script>
+    <script>
+        console.log(localStorage.getItem('statusUser') == 'false')
+        if(localStorage.getItem('statusUser') == 'false' || JSON.parse(localStorage.getItem('statusUser')).admin == false) {document.body.style.display = 'none'}
+        document.querySelector('#showUsers').onclick = () =>{showUsers()}
+        document.querySelector('#closeUsers').onclick = () =>{
+            document.querySelector('#showUsers').style.display = 'inline-block'
+            document.querySelector('#closeUsers').style.display = 'none'
+            document.querySelector('#allUsers').remove()
+        }
+
+        function showUsers () {
+
+            document.querySelector('body').insertAdjacentHTML("afterbegin", `
+                <div id="allUsers">
+                    <table>
+                        <tr>
+                            <th>Логин</th><th>Пароль</th><th>Аdmin</th><th>banned</th>
+                        </tr>
+                    </table>
+                </div>`)
+            document.querySelector('#allUsers').style.display = 'inline-block'
+            document.querySelector('#closeUsers').style.display = 'block'
+            document.querySelector('#showUsers').style.display = 'none'
+            for( let i = 0; i < users.length; i++) {
+
+                let tr = document.createElement('tr')
+                for(let item in users[i]) {
+
+                    if(item == 'login' || item == 'password' || item == 'super' || item == 'banned') {
+                        let td = document.createElement('td')
+                        let span = document.createElement('span')
+                            span.textContent = users[i][item]
+                            if(users[i][item] == false) {span.textContent = ""}
+                            td.append(span)
+                        
+                        if(item == 'password') {
+                                span.textContent = '********'
+                            let button = document.createElement('button')
+                                button.textContent = 'глаз'
+                                button.addEventListener('mousedown', () => {span.textContent = users[i][item]})
+                                button.addEventListener('mouseup', () => {span.textContent = '********'})
+                                td.append(button)
+                        }
+                        tr.append(td)
+                    }
+                }
+                document.querySelector('table').append(tr)
+            }
+        }
+
+        let formDelUser = document.forms[0]
+        let checkBich
+        let checkBichIndex
+            document.forms[0].addEventListener('click', (e) => {
+                
+                if(e.target == document.querySelector('#searchBich')) {
+                    e.preventDefault()
+                    //if(checkBich == undefined) {return}
+                    for(let i = 0; i < users.length; i++) {
+                    if(users[i].login == formDelUser.searchUser.value) {
+                        document.querySelector('#selectBich').textContent = users[i].login
+                        checkBich = users[i]
+                        checkBichIndex = i
+                        console.log(checkBich)
+                        break
+                    }
+                }
+                }
+                if(e.target == document.querySelector('#apply')) {
+                    e.preventDefault()
+                    if(checkBich == undefined) {return}
+                    if(formDelUser.curency.value == "delet") {
+                        users.splice(checkBichIndex, 1)
+                        onlyKeysUsersOfLocalStorage.forEach(item => {
+                            let tempItem = JSON.parse(localStorage.getItem(item))
+                            if(tempItem.login == checkBich.login) {localStorage.removeItem(item)}
+                            if(document.querySelector('#allUsers')) {
+                                document.querySelector('#allUsers').remove()
+                                showUsers()
+                                window.location.replace("./admin.html")
+                            }
+                        })
+                    }
+
+                    if(formDelUser.curency.value == "banned") {
+                        users[checkBichIndex].banned = true
+                        onlyKeysUsersOfLocalStorage.forEach(item => {
+                            let tempItem = JSON.parse(localStorage.getItem(item))
+                            if(tempItem.login == checkBich.login) {
+                                tempItem.banned = true
+                                localStorage.setItem(item, JSON.stringify(tempItem))
+                                if(document.querySelector('#allUsers')) {
+                                    document.querySelector('#allUsers').remove()
+                                    showUsers()
+                                }
+                            }
+                        })
+                    }
+
+                    if(formDelUser.curency.value == "removeBanned") {
+                        users[checkBichIndex].banned = false
+                        onlyKeysUsersOfLocalStorage.forEach(item => {
+                            let tempItem = JSON.parse(localStorage.getItem(item))
+                            if(tempItem.login == checkBich.login) {
+                                tempItem.banned = false
+                                localStorage.setItem(item, JSON.stringify(tempItem))
+                                document.querySelector('#allUsers').remove()
+                                showUsers()
+                            }
+                        })
+                    }
+                }
+            })
+            ////////////////////////////////////////////
+            document.querySelector('#getMessage').onclick = () => {
+                if(checkBich == undefined) {return}
+                document.querySelector('#getMessage').style.display = 'none'
+                document.querySelector('#showMessage').style.display = 'block'
+                document.querySelector('#removeMessage').style.display = 'block'
+                checkBich.message.forEach(item => {document.querySelector('#showMessage').insertAdjacentHTML('beforeend' ,`<p>${item}</p>`)})
+            }
+            document.querySelector('#removeMessage').onclick =() => {
+                document.querySelector('#getMessage').style.display = 'block'
+                document.querySelector('#showMessage').style.display = 'none'
+                document.querySelector('#removeMessage').style.display = 'none'
+            }
+            
+
+
+            ///////////////////////////////////////////////
+
+            // let randomArr = ['andy','pol','wasia','roman','andrey','boby','clif','feonor','gustavo','alex','taras','ramin']
+            // let randomArr2 = [1980, 1999, 1976, 2001, 1996, 'Prison', 2006, "Loh", 'Kavboy', 'Warrior', 'Prince',777]
+            // const random = (min, max) => {         
+            //     return Math.floor(Math.random() * (max - min + 1)) + min;          
+            // }
+
+            // function fakeUsers() {
+            //     for(let i = users.length; i < users.length + 5; i++) {
+            //     let fake = {
+            //         login: randomArr[random(0, 11)] + randomArr2[random(0, 11)],
+            //         password: randomArr2[random(0, 11)] + randomArr[random(0, 11)],
+            //         super: false,
+            //         banned: false,
+            //         message: []
+            //     }
+                
+            //     localStorage.setItem(i, JSON.stringify(fake))
+            //     console.log(onlyKeysUsersOfLocalStorage)
+            //     }
+            //     window.location.replace("./admin.html")
+            // }
+
+            // document.querySelector('#fake').onclick = fakeUsers
+
+            
+
+
+        // for(let item in users[0]) {
+        //     console.log(users[0][item])
+        // }
+        // for(let item of users) {
+        //     console.log(item.login)
+        // }
+    </script>
+</body>
+</html>

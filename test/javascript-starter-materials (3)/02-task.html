@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <pre>
+        Задание:
+        Переменная season может принимать 4 значения: 1, 2, 3 или 4. Если значение переменной 1 в переменную result запишите значение "зима",
+        если значение 2 - "весна" и т.д. Выведите значение переменной result на экран. Решите задачу используя конструкцию switch.
+    </pre>
+    <script>
+        let season = +prompt('введите значение от одного до четырёх');
+        let result;
+        switch(season) {
+            case 1:
+                result = alert("зима");
+                break;
+            case 2:
+                result = alert("весна");
+                break;
+            case 3:
+                result = alert("лето");
+                break;
+            case 4:
+                result = alert("осень");
+                break;
+            default:
+                result = alert("не правильное значение");
+                break;
+        }   
+    </script>
+</body>
+</html>

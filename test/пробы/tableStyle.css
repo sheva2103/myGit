@@ -1,0 +1,72 @@
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+    }
+    th, td {
+    background: #AFCDE7;
+    color: rgb(0, 0, 0);
+    padding: 8px 15px;
+    }
+    th {
+        padding: 10px 20px;
+    }
+    
+    th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+    }
+    td {
+    background: #D8E6F3;
+    }
+    .table tr:hover td, .table_2 tr:hover td, .table_3 tr:hover td, .table_4 tr:hover td, .playoff tr:hover td {
+        background-color: #AFCDE7;
+        transition: all 0.4s ease-out;
+    }
+    
+
+
+    th:first-child {
+        border-top-left-radius: 10px;
+        }
+    th:last-child {
+        border-top-right-radius: 10px;
+        border-right: none;
+        }
+
+        tr:last-child td:first-child {
+            border-radius: 0 0 0 10px;
+            }
+            tr:last-child td:last-child {
+            border-radius: 0 0 10px 0;
+            border-bottom: none;
+            }
+
+            tr:last-child td:first-child {
+                border-bottom: none;
+                }
+
+            tr td:last-child {
+            border-right: none;
+            }
+
+    th:first-child {
+        padding: 10px 30px;
+    }
+
+td button {
+    float: right;
+    margin: 0 0 0 5px;
+}
+#closeUsers {
+    display: none;
+}
+#allUsers {
+    display: none;
+}
+form {
+    display: inline-block;
+    margin: 10px;
+}

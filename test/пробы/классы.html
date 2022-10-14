@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class One {
+            #name = "sasha" //закрытое поле, может использоваться только внутри класса
+            constructor (x, y, z, modOne, modTwo) {
+                this.car1 = x;
+                this.car2 = y;
+                this.car3 = z
+                this._modOne = modOne //значения которые должны использоваться только внутри класса
+                this._modTwo = modTwo
+                this._ccc = 0
+            }
+
+            upper() {
+                return [this.car1.toUpperCase(), this.car2.toUpperCase(), this.car3.toUpperCase()]
+            }
+
+            lover () {
+                let array = []
+                for ( let el of this.upper()) {
+                    array.push(el[0].toUpperCase() + el.toLowerCase().slice(1))
+                }
+                return array
+            }
+
+            get modOne (){  //связывает свойство объекта с методом
+                let arr = this.lover()
+                let array = arr.map(item => {
+                    if(item == arr[1]) {
+                        item += ' ' + this._modOne
+                    }
+                    return item
+                })
+                return array
+            }
+
+            get modTwo () {
+                let arr = this.lover()
+                let array = arr.map(item => {
+                    if(item == arr[2]) {
+                        item += ' ' + this._modTwo
+                    }
+                    return item
+                })
+                return array
+            }
+
+            get vs (){                                              ///значение нет в классе, но оно вычисляется и потом можно к нему обратиться
+                if(this.modOne[1].length > this.modOne[2].length) {
+                    return this.modOne[1]
+                }
+                else {
+                    return this.modTwo[2]
+                }
+            }
+
+
+
+            set aaa(value) {         //связывает свойство объекта с функцией
+                this._ccc = value   // присваеваем свойству переданное значение
+            }
+
+            get bbb() {
+                return this.vs + ' ' + this._ccc
+            }
+
+
+        }
+
+        let cars = new One('bmw', 'ford', 'opel', 'mustang', 'vectra')
+        console.log(cars)
+        console.log(cars.upper())
+        console.log(cars.lover())
+        console.log(cars.modOne)
+        console.log(cars.modTwo)
+        console.log(cars.vs)
+        cars.aaa = 'cool'
+        console.log(cars.bbb)
+
+
+    </script>
+</body>
+</html>

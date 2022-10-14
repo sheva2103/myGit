@@ -1,0 +1,416 @@
+body {
+    overflow-x:hidden;
+    padding: 0 10px;
+}
+
+
+.wrapper {
+    margin: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sidebar {
+    border: solid black 1px;
+    border-radius: 6px;
+}
+
+.sidebar_login {
+    display: inline-block;
+}
+
+.sidebar_user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sidebar_name {
+    flex: 1 1 auto;
+    margin: 10px;
+    background-color: rgb(85, 240, 71);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 6px 6px 8px 0px rgb(34 60 80 / 60%);
+}
+
+.sidebar_time {
+    flex: 1 1 45%;
+    text-align: center;
+    margin: 10px;
+    border: thin dotted;
+    border-radius: 14px;
+    padding: 8px;
+    color: rgb(77, 77, 107);
+}
+
+
+.sidebar_darkWhiteMode {
+    flex: 1 1 auto;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 6px 6px 8px 0px rgb(34 60 80 / 60%);
+    border-radius: 20px;
+    background-color: rgb(238, 238, 238);
+}
+.sidebar_darkWhiteMode span {
+    padding: 5px 5px 5px 8px;
+}
+    .sidebar_darkWhiteMode_wrapper {
+        width: 60px;
+        height: 30px;
+        background-color: rgb(95, 95, 95);
+        border-radius: 30px ;
+        border: solid 2px black;
+        margin: 6px;
+        float: right;
+    }
+        .sidebar_darkMode {
+            max-width: 50%;
+            height: 100%;
+            background-color: rgb(153, 153, 153);
+            border-radius: 50%;
+            transition: all 0.8s;
+        }
+        .sidebar_whiteMode {
+            margin-left: 50%;
+            
+            background-color: rgb(23, 240, 34);
+        }
+
+.sidebar_exit {
+    flex: 1 1 auto;
+    margin: 10px;
+    background-color: rgb(226, 225, 225);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 6px 6px 8px 0px rgb(34 60 80 / 60%);
+}
+    .sidebar_exit span {
+        padding: 10px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    #admin {
+        display: none;
+    }
+
+.management {
+    display: block;
+    margin: 10px 0px;
+}
+    .newMessage {
+        display: inline-block;
+    }
+
+    .searchMessage {
+        display: inline-block;
+    }
+
+        .search_input {
+            display: none;
+            width: 1px;
+            transition: 1s;
+            border: none;
+            border-bottom: 2px solid forestgreen;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .search_input:focus-visible {
+            border-bottom: 1px solid forestgreen;
+            border-color: forestgreen;
+        }
+
+.element {
+    display: flex;
+    padding: 5px;
+    background-color: rgb(226, 225, 225);
+    border-radius: 5px;
+    max-width: 100%;
+    box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+    transition: 0.3s;
+    margin-top: 14px;
+}
+    .element img {
+        display: none;
+    }
+
+.element:nth-child(even) {
+    background-color: rgb(196, 196, 196);
+}
+
+.element:hover {
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0px 0px 10px 5px rgba(20, 36, 48, 0.2);
+    border: none;
+}
+
+
+/*.element div:first-child {
+    padding: 10px;
+    flex: 0 1 10%;
+    font-size: 1.2rem;
+    align-items: flex-start;
+    font-weight: 800;
+}*/
+.element_name {
+    padding: 10px;
+    flex: 0 1 10%;
+    font-size: 1.2rem;
+    align-items: flex-start;
+    font-weight: 800;
+}
+
+.element_message {
+    padding: 10px 10px 0px 10px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 1 90%;
+}
+
+/*.element div:nth-child(2) {
+    padding: 10px;
+    flex: 1 1 80%;
+    font-size: 1.2rem;
+}*/
+
+.element img {
+    margin: 10px;
+    flex: 0 1 auto;
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+.comments {
+    /*position: relative;*/
+    bottom: 5px;
+    display: flex;
+    justify-content: end;
+    padding: 10px 10px 5px 0px;
+    font-size: 1.05rem;
+    color: rgb(77, 77, 107);
+    /*flex-direction: column;*/
+}
+    .comments span {
+        cursor: pointer;
+        align-self: flex-end;
+        /*display: none;*/
+    }
+
+/*.message_text {
+    
+}*/
+
+textarea {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    background-color: rgb(235, 233, 233);
+    border-color: forestgreen;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    width: 100%;
+
+}
+
+
+.delpost {
+    transform: translateX(-100%);
+    opacity: 0.1;
+    transition: 1s;
+}
+
+#edit, #delete {
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.541);
+    top: 0;
+    left: 0;
+}
+
+.modal_body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.modal_content {
+    background-color: rgb(44, 44, 44);
+    color: rgb(231, 231, 231);
+    max-width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.modal_close {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    font-size: 16px;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+.modal_content button {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:large;
+    font-weight: 600;
+    background-color: forestgreen;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px;
+    display: inline-flex;
+    padding: 6px;
+}
+
+.modal_content_login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.modal_content_login input {
+    flex: 0 1 45%;
+    margin: 5px;
+    border-radius: 4px;
+    border: none;
+    font-size:large;
+}
+
+.modal_content_login span {
+    flex: 0 1 50%;
+    margin: 5px 5px 5px 0px;
+    text-align: end;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.sliding-button {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    /*border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);*/
+    border-color: forestgreen;
+    border-image-slice: 1;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.sliding-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background-color: forestgreen;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.sliding-button:hover {
+    background: rgba(255, 255, 255, 0);
+}
+.sliding-button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+}
+
+.newMessageModal {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+    display: flex;
+}
+    .newMessage_text {
+        flex: 1 1 90%;
+        padding: 10px 10px 0px 10px;
+        align-self: flex-end;
+    }
+        .newMessage_text textarea {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: rgb(73, 73, 73);
+            color:rgb(1, 173, 216);
+        }
+        
+    .newMessage_confirm {
+        flex: 1 1 10%;
+        align-self: flex-end;
+        padding-bottom: 2px;
+    }
+        .newMessage_confirm button {
+            margin: 10px;
+        }
+
+/********************************************************/
+
+.dark_body {
+    background-color: slategrey;
+}
+.dark_element {
+    background-color: #3a4148;
+    box-shadow: 0px 0px 10px 4px rgb(172 175 177 / 20%);
+}
+.dark_element:hover {
+    background-color: #3a4148;
+    box-shadow: 0px 0px 10px 5px rgba(230, 233, 235, 0.829);
+    border: none;
+}
+.dark_element:nth-child(even) {
+    background-color: #3a4148;
+}
+.dark_element_name {
+    color: darkorange;
+}
+.dark_message_text {
+    color: #1491bb;
+}
+.dark_comments_span {
+    color: #ff8217;
+}
+.dark_sidebar_time {
+    color: snow;
+}
+
+
+
+
+
+
+/*******************************************************/

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Men {
+            firstMan() {
+                console.log('first')
+            }
+            twoMan() {
+                console.log('two')
+            }
+            constructor(one) {
+                this.treeMan = one
+                console.log(this.treeMan)
+            }
+        }
+
+        const qwe = new Men('sasha')
+        qwe.firstMan()
+
+        class Men2 extends Men {
+
+            firstMan() {
+                super.firstMan() //метод не перезаписывается, а с помощью super обращаемся к методу родительского класса(только с методами)
+                console.log('yo')
+            }
+
+        }
+
+        const qwer1 = new Men()
+        const qwer = new Men2()
+        qwer.twoMan()
+        qwer1.firstMan()
+        qwer.firstMan()
+
+    </script>
+</body>
+</html>

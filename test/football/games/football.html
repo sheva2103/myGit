@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="football.css">
+</head>
+<body>
+
+    <table class="table">
+        <tr>
+            <th>Группа А</th>
+            <th>Группа Б</th>
+            <th>Группа С</th>
+            <th>Группа D</th>
+        </tr>
+        <!--<tr class="a">
+            <td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr class="b">
+            <td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr  class="c">
+            <td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr  class="d">
+            <td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>-->
+    </table>
+
+
+    <div class="uuu"></div>
+
+    <table id="table"></table>
+
+    <script>
+        let basket_1 = ['argentina','brazil','germany','France']
+        let basket_2 = ['usa','mexico','ukraine','russia']
+        let basket_3 = ['Uruguay','Paraguay','Australia','Japan']
+        let basket_4 = ['Senegal','Nigeria','South Africa','Iran']
+
+        console.log(basket_1)
+        function shuffle(array) {                          // ф-я перемешивает массив
+            array.sort(() => Math.random() - 0.5);
+            return array
+        }
+        shuffle(basket_1)
+        console.log(basket_1)
+
+
+
+        let group_a = []
+        let group_b = []
+        let group_c = []
+        let group_d = []
+
+        
+
+        function arrayRandElement(arrOld, arrNew) {
+            var rand = Math.floor(Math.random() * arrOld.length); // получаем рандомный индекс
+            arrNew.push(arrOld[rand])                             // добавляем элемент по рандомному индексу в новый массив
+            arrOld.splice(rand, 1)                                // удаляем элемент с массива
+
+            /////////////////////////////////////////////////
+
+
+
+            ////////////////////////////////////////////////
+        }
+
+        /*arrayRandElement(basket_1, group_a)
+        arrayRandElement(basket_1, group_b)
+        arrayRandElement(basket_1, group_c)
+        arrayRandElement(basket_1, group_d)
+
+        arrayRandElement(basket_2, group_a)
+        arrayRandElement(basket_2, group_b)
+        arrayRandElement(basket_2, group_c)
+        arrayRandElement(basket_2, group_d)
+
+        arrayRandElement(basket_3, group_a)
+        arrayRandElement(basket_3, group_b)
+        arrayRandElement(basket_3, group_c)
+        arrayRandElement(basket_3, group_d)
+
+        arrayRandElement(basket_4, group_a)
+        arrayRandElement(basket_4, group_b)
+        arrayRandElement(basket_4, group_c)
+        arrayRandElement(basket_4, group_d)*/
+
+        console.log(group_a)
+        console.log(group_b)
+        console.log(group_c)
+        console.log(group_d)
+
+
+
+
+
+        let groupTemp = {
+            0 : {name : 0, victories : 0, points : 0},
+            1 : {name : 0, victories : 0, points : 0},
+            2 : {name : 0, victories : 0, points : 0},
+            3 : {name : 0, victories : 0, points : 0}
+        }
+        console.log(groupTemp)
+
+
+
+        function arrayRandElement222(arrOld, objNew) {
+        
+            basket_1.forEach(function(item, index) {
+                objNew[index].name = item
+            })                                
+
+        }
+
+        arrayRandElement222(basket_1, groupTemp)
+        console.log(groupTemp)
+        console.log(basket_1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*let lll = {...group_a}
+        console.log(lll)
+
+        console.log(lll[2])
+
+        let mmm = {
+            info : 88888,
+            gool : {},
+        }
+
+        let iii = Object.assign(mmm.gool, group_b)
+        console.log(iii)
+        console.log(mmm)*/
+
+        /*iii[2] = new Object()
+        iii[2].gool = 9
+        iii[2].name = group_b[2]
+        iii[2].skill = 87
+        console.log(iii)*/
+        
+
+
+
+
+
+
+        
+/////////////////////////////////////////////////////////////////
+        // let temporary = []
+        // temporary.push(group_a, group_b, group_c, group_d)
+        // console.log(temporary)
+
+        // let table = document.querySelector('.table')
+
+        // for (let elem of temporary) {
+
+        //     let tr = document.createElement('tr')
+
+        //         for ( let subArr of elem ) {
+        //             let td = document.createElement('td')
+        //             td.innerHTML = subArr
+        //             tr.append(td)
+        //         }
+
+        //     table.append(tr)
+        // }
+
+/////////////////////////////////////////////////////////////
+        
+
+    
+
+    </script>
+</body>
+</html>

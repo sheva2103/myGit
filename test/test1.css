@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+body {
+    background-color: rgb(163, 217, 241);
+}
+.flex_cont {
+    margin: 100px;
+    border: thin dotted black;
+    font-family: Merriweather;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    justify-content: center;
+}
+
+.flex_el {
+    background-color: burlywood;
+    padding: 10px;
+    
+
+}
+
+.cont {
+    background-color: #fff;
+    border: solid 1px black;
+    font-size: 150%;
+    padding: 5px;
+}
+
+/*.cont1 {
+    order: 2;
+}
+.cont2 {
+    order: 1;
+}
+.cont3 {
+    order: 4;
+}
+.cont4 {
+    order: 3;
+}
+.cont5 {
+    order: 5;
+}*/ /*меняет порядок*/
+.cont5 {
+    flex-basis: 300px;
+}
+/*.cont1 {
+    flex-grow: 1;
+}/*растягуется на всё свободное пространство*/
+
+
+.cont:hover {
+    background-color: chocolate;
+    transition: 0.5s;
+    transform: scale(105%);
+    box-shadow: 7px 7px 3px -1px rgba(41, 39, 37, 0.31);
+}
+
+.cont:active {
+    transform: skewX(5deg);
+}

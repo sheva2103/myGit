@@ -1,0 +1,33 @@
+/* родитель */
+.block{
+margin: 50px;
+}
+
+.block__row{
+
+border: 20px solid #ece89d;
+display: flex;
+/*display: inline-flex;*/
+justify-content: start; /*end/center/space-between/space-around*/
+align-items: start;/*все элементы подстраивются под высоту самого высокого*/
+flex-wrap: wrap;/*при нехватке места перескакуют на следующую строку*/
+flex-direction: row;/*выстраевает блоки по горизонтали или вертикали*/
+}
+
+.block__element{
+
+border: 10px solid #5e5373;
+}
+
+/* контент */
+.block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+padding: 30px;
+font-weight: bolder;
+font-size: 200%;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}

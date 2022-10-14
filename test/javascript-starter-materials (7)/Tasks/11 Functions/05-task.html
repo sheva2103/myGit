@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <pre>
+        Задание:
+        Создайте функцию, которая принимает массив значений и возвращает массив с дублирующимися значениями или null если повторяющихся значений в массиве нет.
+    </pre>
+    <script>
+        let arr = [25,69,3,8,25,4,3,"qwe",8,58,74,"a","a","b","qwe"];
+        console.log(arr);
+        
+        function dublicat() {
+            let dublicates = [];
+
+            arr.sort()
+
+            for (let i = 0; i<arr.length; i++) {
+                if (arr[i + 1] === arr[i]) {
+                    dublicates.push(arr[i])
+                }
+                
+            }
+            return dublicates.length !== 0? dublicates : null; 
+        }
+        console.log(dublicat())
+        /////// просто для себя
+        /*let arrE = [25,69,3,8,25,4,3,"qwe",8,58,74,"a","a","b","qwe"];
+        let zzz = dublicat()
+        console.log(zzz)
+        console.log(arrE.concat(zzz))
+        console.log(arrE.sort())*/
+
+        //////////////////////////////////////////////////////////////////////////////////////////////// таск Славика
+        let arrQ = [25,69,3,8,25,4,3,"qwe",8,58,74,"a","a","b","qwe"];
+        console.log(arrQ);
+        //удалить из массива повторяющиеся значения
+        /////Максимально костыльный метод (говнокод котрый работает). И да, я знаю что delete плохо подходит для массивов
+
+        function dublicatDel() {
+            
+            arrQ.sort()
+
+            for (let i = 0; i<arrQ.length; i++) {
+                if (arrQ[i + 1] === arrQ[i]) {
+                    delete arrQ[i]
+                }
+            }
+            return arrQ 
+        }
+        dublicatDel()
+        let filtered = arrQ.filter(function (el) {
+        return el != null;
+        });
+        arrQ = filtered;
+        console.log(arrQ);
+
+        ////////////второй вариант
+        let arrS = [25,69,3,8,25,4,3,"qwe",8,58,74,"a","a","b","qwe"];
+
+        let arr_2 = arrS.filter((item, index) => {
+
+        return arrS.indexOf(item) === index
+        });
+        console.log(arr_2)
+        //////////////////////////////////////////////////////////////попытка номер 3 ///не закончил, не получается
+        let arrX = [25,69,3,8,25,4,3,"qwe",8,58,74,"a","a","b","qwe"];
+        console.log(arrX);
+
+        function ttt() {
+            arrX.sort()
+
+        for ( let i = 0; i < arrX.length; i++ ) {
+            if ( arrX[i + 1] === arrX[i] ) {
+                arrX.splice(arrX[i], 1)
+            }
+        }
+        return arrX
+        }
+        console.log(ttt())
+        
+    </script>
+</body>
+</html>
